@@ -1,0 +1,19 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+
+- script: echo "Installing Terraform"
+  displayName: Install Terraform
+
+- script: terraform --version
+  displayName: Check Terraform Version
+
+- script: terraform init
+  displayName: Terraform Init
+
+- script: terraform plan
+  displayName: Terraform Plan
